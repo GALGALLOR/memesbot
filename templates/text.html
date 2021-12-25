@@ -1,0 +1,114 @@
+<html>
+    <head>
+        <title>The Instabot website</title>
+        <link rel="icon" href="https://image.shutterstock.com/image-vector/funny-vector-robot-flat-style-260nw-532218982.jpg">
+    </head>
+    <style>
+        td,th{
+        border:red solid 1px;
+        }
+        #url{
+            width:70%;
+            height:10%;
+        }
+        .usernames{
+            background:brown;
+            border-radius: 1cm;
+            padding:1cm;
+            position:relative;
+        }
+        .navbar{
+            background:red;
+            padding:1cm;
+            position:absolute;
+            width:100%;
+            top:0;
+            left:0;
+            margin-bottom:1cm;
+        }
+    </style>
+    <body style='margin-left:20%;margin-top: 10%;' >
+        <div class="navbar">
+            
+        </div>
+        <h1>This is the Instabot website...</h1>
+        <form  method='post'>
+<div class="new">
+            <label for="username">New Username</label>
+            <input type=text placeholder='username' name='username' ><br><br>
+            <label for="password">New password</label>
+            <input type="password" placeholder='password' name='password' ><br><br><br><br>
+            <button id='Go' name='go' value='go' >Go</button>
+</div><hr><br>
+
+
+        <label for="url">Enter the url for the upcoming webiste ::  </label><br>
+        <input placeholder='https://nairobiwire.com/wp-content/uploads/2021/10/p{}.jpg' name='url' type="text" id='url' >
+        <br><button id='add_url' name='add_url' value='add_url'>Add Url</button>
+        <br><label  onclick='myfunc()' style='color:red' for="url"> put the Reccurring section in {} </label>
+        <br><hr><br>
+        <a target="blank" href="https://nairobiwire.com/humour"><h1>https://nairobiwire.com/humour</h1></a>
+        <div class="table">
+            <table  >
+                <tr>
+                    <th>Url of the Page</th>
+                </tr>
+                {%for url in domains%}
+                <tr>
+                    <td>{{url}}</td>
+                </tr>
+                {%endfor%}
+            </table><br>
+            <button id='clear_domains' name='clear_domains' value='clear_domains'  >Clear List</button>
+            <br><br>
+    <div id='usernames' class="usernames">
+                {%for username in usernames%}
+                <label for="{{username}}">{{username}}</label>
+                <input checked=checked id='{{username}}' name='usernamex' type="checkbox" value={{username}} ><br>
+                {%endfor%}
+                <button id='clear_usernames' name='clear_usernames' value='clear_usernames' >Clear Usernames</button>
+    </div>
+            <button onclick='myfunc()' id='activator' name='activator' value='activator' >Activate Bot</button>
+            <br><br>
+
+                <input value='submit' name='submit' type="submit">
+            </form>
+        </div>
+        <style>
+            .loader {
+              border: 16px solid #f3f3f3;
+              border-radius: 50%;
+              border-top: 16px solid #3498db;
+              width: 120px;
+              height: 120px;
+              -webkit-animation: spin 2s linear infinite; /* Safari */
+              animation: spin 2s linear infinite;
+            }
+            
+            /* Safari */
+            @-webkit-keyframes spin {
+              0% { -webkit-transform: rotate(0deg); }
+              100% { -webkit-transform: rotate(360deg); }
+            }
+            
+            @keyframes spin {
+              0% { transform: rotate(0deg); }
+              100% { transform: rotate(360deg); }
+            }
+            .loader{
+                position:fixed;
+                left:-50%;
+                top:30%;
+                
+            }
+            </style>
+    <div class="loader"></div>
+    <script>
+        function myfunc(){
+        document.getElementById('loader').style.left='50%';
+        document.body.style.color='grey';
+        document.body.style.background='grey';
+        }
+    </script>
+    </body>
+</html>

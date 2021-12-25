@@ -1,0 +1,11 @@
+1]Configuration file
+
+
+2]Database setup in Console and on Python file
+
+3]Download Modules and set python file as:mkvirtualenv flaskk --python=python3.8
+
+4]
+
+https://nairobiwire.com/wp-content/uploads/2021/10/trend{}-3.jpg
+
